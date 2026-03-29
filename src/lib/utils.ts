@@ -1,13 +1,22 @@
-import { type ClassValue, clsx } from "clsx";
+type ClassValue =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | ClassValue[];
 
 /**
- * Merges Tailwind class names safely.
- * Install clsx: npm i clsx
+ * Merges class names safely without external dependencies.
  */
 export function cn(...inputs: ClassValue[]): string {
-  // Lightweight implementation without clsx dependency
   return inputs
     .flat()
-    .filter((x) => typeof x === "string" && x.length > 0)
+    .filter(
+      (value): value is string | number =>
+        (typeof value === "string" || typeof value === "number") &&
+        String(value).length > 0,
+    )
+    .map(String)
     .join(" ");
 }
