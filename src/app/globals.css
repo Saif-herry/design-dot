@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────
+   Base resets & custom properties
+───────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body bg-white text-gray-900 overflow-x-hidden;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Reusable component layer
+───────────────────────────────────────────── */
+@layer components {
+  /* ── Navigation ── */
+  .nav-link {
+    @apply text-[0.72rem] font-bold tracking-[0.12em] uppercase text-[#1a1a2e]
+           whitespace-nowrap transition-colors duration-200 hover:text-brand-orange;
+  }
+
+  /* ── Hexagon logo ── */
+  .hex-logo {
+    @apply relative flex items-center justify-center;
+    width: 46px;
+    height: 52px;
+  }
+
+  .hex-logo svg {
+    @apply absolute inset-0 w-full h-full;
+  }
+
+  /* ── Tri-color header border ── */
+  .header-border {
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      #0d1b4b 0% 50%,
+      #2c1a0e 50% 75%,
+      #f47920 75% 100%
+    );
+  }
+
+  /* ── Borderless dropdown ── */
+  .ctrl-select {
+    @apply text-[0.72rem] font-bold tracking-[0.08em] text-[#1a1a2e]
+           bg-transparent border-none outline-none cursor-pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a2e'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 8px;
+  }
+
+  .ctrl-select:hover {
+    @apply text-brand-orange;
+  }
+
+  /* ── Section label (vertical accent) ── */
+  .section-label {
+    @apply font-display font-black text-navy uppercase text-xl sm:text-2xl tracking-wider;
+  }
+
+  /* ── Container ── */
+  .container-main {
+    @apply max-w-container mx-auto px-4 sm:px-8 3xl:px-12;
+  }
+
+  /* ── Fade-in scroll animation ── */
+  .fade-in {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* ── Insight card ── */
+  .insight-card {
+    @apply relative overflow-hidden rounded-3xl cursor-pointer
+           transition-all duration-300 ease-out
+           hover:-translate-y-1.5 hover:shadow-2xl;
+  }
+
+  .insight-card .card-label {
+    @apply absolute bottom-0 left-0 right-0 p-4 text-white;
+    background: linear-gradient(to top, rgba(7, 17, 48, 0.92) 60%, transparent);
+  }
+
+  .card-label-v {
+    @apply absolute inset-x-0 bottom-0 flex justify-center items-end px-6 py-8;
+    height: 55%;
+    background: linear-gradient(to top, rgba(7, 17, 48, 0.92) 70%, transparent);
+  }
+
+  .card-label-v span {
+    @apply text-white text-xl font-semibold tracking-[0.08em] uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Hero-specific styles (complex clip-paths)
+───────────────────────────────────────────── */
+.hero-wrap {
+  position: relative;
+  min-height: 520px;
+  background-color: #0d1b4b;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, #0d1b4b 55%, transparent 55%);
+}
+
+.hero-diamond {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 480px;
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+  overflow: hidden;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hero-diamond {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-wrap {
+    min-height: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-wrap {
+    min-height: 620px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-wrap {
+    min-height: 760px;
+  }
+}
