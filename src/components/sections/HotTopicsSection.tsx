@@ -9,13 +9,13 @@ export default function HotTopicsSection() {
         {/* Orange angled label */}
         <div className="mr-6 flex shrink-0 items-start sm:mr-10">
           <div
-            className="flex h-[58px] min-w-[190px] items-center rounded-l-lg rounded-br-lg rounded-tr-lg bg-brand-orange pl-7 pr-12"
+            className="flex h-[45px] min-w-[170px] items-center rounded-l-lg rounded-br-lg rounded-br-[7px] rounded-r-[30px] bg-brand-orange pl-7 pr-12"
             style={{
               clipPath: "polygon(0 0, 88% 0, 100% 100%, 0 100%)",
             }}
             aria-hidden="true"
           >
-            <span className="block whitespace-nowrap text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-white">
+            <span className="block whitespace-nowrap text-[0.59rem] font-extrabold uppercase tracking-[0.18em] text-black">
               Hot Topics
             </span>
           </div>
@@ -34,10 +34,12 @@ export default function HotTopicsSection() {
 
 function TopicItem({ topic }: { topic: HotTopic }) {
   return (
-    <li className="px-5 sm:px-6 flex flex-col justify-between gap-4 py-1">
+    <li className="px-5 sm:px-6 flex flex-col justify-between gap-1 py-0.5">
       <div>
-        <div className="w-full h-[2px] bg-navy mb-4" aria-hidden="true" />
-        <p className="text-gray-800 text-sm leading-snug">{topic.text}</p>
+        <div className="w-full h-[2px] bg-navy mb-2" aria-hidden="true" />
+        <p className="font-poppins text-[12px] font-thin  tracking-[0] text-gray-600 ">
+          {topic.text}
+        </p>
       </div>
       <button
         className="self-end text-gray-800 hover:text-brand-orange transition-colors"

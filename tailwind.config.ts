@@ -23,6 +23,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-barlow-condensed)", "sans-serif"],
         body: ["var(--font-barlow)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
       screens: {
         xs: "320px",

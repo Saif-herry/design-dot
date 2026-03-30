@@ -25,7 +25,7 @@ export default function AboutSection() {
       className="py-16 sm:py-20 lg:py-16 bg-white"
       aria-labelledby="about-heading"
     >
-      <div className="container-main">
+      <div className="container-main  ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* ── Left label ── */}
           <div className="fade-in lg:col-span-2">
@@ -35,7 +35,7 @@ export default function AboutSection() {
                   accent={false}
                   className="text-br text-lg sm:text-xl lg:text-[1rem]"
                 >
-                  <span className="text-lg leading-none sm:text-xl lg:text-[1.2rem]">
+                  <span className="font-poppins font-bold text-[18px] leading-[1.6rem] sm:text-[19px] lg:text-[1.05rem]">
                     <span className="block">ABOUT</span>
                     <span className="mt-0 block">FIRM</span>
                   </span>
@@ -46,25 +46,32 @@ export default function AboutSection() {
 
           {/* ── Centre copy + stats ── */}
           <div
-            className="lg:col-span-5 fade-in"
+            className="font-poppins  lg:col-span-5 fade-in  "
             style={{ transitionDelay: "100ms" }}
           >
-            <h2
-              id="about-heading"
-              className="font-display font-bold text-navy text-xl sm:text-2xl mb-4"
-            >
+            <p className="font-thin text-gray-600 text-lg sm:text-xl mb-4">
               {SITE_CONFIG.name}
-            </h2>
+            </p>
 
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
+            <p className="text-gray-600 text-[5px] sm:text-xs leading-relaxed mb-8">
               {SITE_CONFIG.aboutDescription}
             </p>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-x-10 gap-y-8 border-t border-gray-100 pt-8">
-              {STATS.map((stat) => (
-                <StatCard key={stat.value} stat={stat} />
-              ))}
+            <div className="border-t border-gray-100 pt-8">
+              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
+                {STATS.slice(0, 2).map((stat) => (
+                  <StatCard key={stat.value} stat={stat} />
+                ))}
+              </div>
+
+              <div className="border-[1.2px] border-t border-blue-900 my-8" />
+
+              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
+                {STATS.slice(2).map((stat) => (
+                  <StatCard key={stat.value} stat={stat} />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -76,13 +83,12 @@ export default function AboutSection() {
             {/* Location control (design-only; map removed) */}
             <div className="flex items-center justify-end mb-4">
               <div className="inline-flex items-center rounded-full bg-brand-orange shadow-sm overflow-hidden">
-                <span className="px-5 py-2 text-[0.7rem] font-black tracking-[0.14em] uppercase text-black">
+                <span className="px-5 py-[1px] text-[0.6rem] font-black tracking-[0.14em] uppercase text-black">
                   We Are Located
                 </span>
-                <span className="w-px self-stretch bg-black/20" />
-                <div className="px-5 py-2">
+                <div className="px-5 py-[1px]">
                   <select
-                    className="text-[0.72rem] font-black tracking-[0.10em] uppercase text-black bg-transparent border-none outline-none cursor-pointer pr-6"
+                    className="text-[0.62rem] mb-2 font-black tracking-[0.10em] uppercase text-black bg-transparent border-none outline-none cursor-pointer pr-6"
                     value={selectedOffice.value}
                     onChange={(e) => {
                       const found = officeOptions.find(
@@ -111,7 +117,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="w-full rounded-3xl overflow-hidden shadow-lg relative bg-gray-50 min-h-[320px] sm:min-h-[420px] lg:min-h-[550px]">
+            <div className="w-full rounded-3xl overflow-hidden shadow-lg relative bg-gray-50 min-h-[320px] sm:min-h-[420px] lg:min-h-[420px]">
               <Image
                 src="/dreamViewImg.jpg"
                 alt={`Industry image — ${selectedOffice.label}`}
@@ -130,10 +136,10 @@ export default function AboutSection() {
 function StatCard({ stat }: { stat: StatItem }) {
   return (
     <div className="stat-item" style={{ animationDelay: stat.delay }}>
-      <p className="font-display font-black text-navy text-4xl sm:text-5xl leading-none">
+      <p className="font-display text-gray-700 text-[4px] sm:text-4xl leading-none">
         {stat.value}
       </p>
-      <p className="text-gray-500 text-xs sm:text-sm mt-1 font-medium leading-snug whitespace-pre-line">
+      <p className="text-gray-500 text-[4px] sm:text-xs mt-1 font-medium leading-snug whitespace-pre-line">
         {stat.label}
       </p>
     </div>

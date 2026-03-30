@@ -108,7 +108,7 @@
   }
 
   .card-label-v span {
-    @apply text-white text-xl font-semibold tracking-[0.08em] uppercase;
+    @apply text-white text-[10px] sm:text-[12px] font-semibold tracking-[0.08em] uppercase;
     writing-mode: vertical-lr;
     text-orientation: mixed;
     transform: rotate(180deg);

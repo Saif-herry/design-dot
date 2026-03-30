@@ -52,7 +52,7 @@ export default function InsightsSection() {
             className="lg:col-span-5 fade-in"
             style={{ transitionDelay: "200ms" }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-[2.15fr_0.8fr_0.8fr] gap-4 h-[320px] sm:h-[420px] lg:h-[550px]">
+            <div className="grid grid-cols-1 sm:grid-cols-[2.15fr_0.8fr_0.8fr] gap-4 h-[230px] sm:h-[320px] lg:h-[420px]">
               {featuredCard ? <InsightCardItem card={featuredCard} /> : null}
               {supportingCards.map((card) => (
                 <InsightCardItem key={card.id} card={card} />
@@ -76,14 +76,14 @@ function InsightListItem({
   return (
     <article className="group">
       <h3
-        className={`font-display font-bold text-xl leading-tight mb-2 ${
+        className={`font-display font-bold text-base leading-tight mb-1 ${
           item.isActive ? "text-[#1C4AA0]" : "text-black"
         }`}
       >
         {item.title}
       </h3>
       <p
-        className={`text-base leading-relaxed pb-4 ${
+        className={`text-xs leading-relaxed pb-4 ${
           item.isActive ? "text-[#1C4AA0]" : "text-gray-800"
         } ${
           !isLast
@@ -105,7 +105,7 @@ function InsightCardItem({ card }: { card: InsightCard }) {
 
   return (
     <div className={`insight-card ${isWide ? "" : "hidden sm:block"}`}>
-      <div className="relative w-full h-full min-h-[180px] sm:min-h-0 rounded-3xl overflow-hidden">
+      <div className="relative w-full h-full min-h-[90px] sm:min-h-0 rounded-3xl overflow-hidden">
         <Image
           src={card.image}
           alt={card.title}
@@ -120,11 +120,11 @@ function InsightCardItem({ card }: { card: InsightCard }) {
 
         {isWide ? (
           <div className="card-label">
-            <p className="text-white text-2xl sm:text-[2rem] font-display font-bold mb-1">
+            <p className="text-white text-xs sm:text-base font-display font-bold mb-1">
               {card.title}
             </p>
             {card.subtitle && (
-              <p className="text-white text-sm sm:text-base leading-snug max-w-[26ch]">
+              <p className="text-white text-[9px] sm:text-[11px] leading-snug max-w-[26ch]">
                 {card.subtitle}
               </p>
             )}
