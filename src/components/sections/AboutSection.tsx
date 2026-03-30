@@ -28,12 +28,19 @@ export default function AboutSection() {
       <div className="container-main">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* ── Left label ── */}
-          <div className="lg:col-span-2 fade-in">
-            <div className="bg-gray-100 rounded-3xl px-8 py-12 sm:px-10 lg:px-10 lg:py-16 flex items-center justify-center min-h-[220px]">
-              <SectionLabel accent={false} className="text-center lg:text-left">
-                About
-                <br className="hidden lg:block" /> Firm
-              </SectionLabel>
+          <div className="fade-in lg:col-span-2">
+            <div className="relative min-h-[170px] rounded-3xl bg-gray-100 px-8 py-12 sm:px-10 lg:px-10 lg:py-16">
+              <div className="absolute bottom-4 left-4 right-8 rounded-3xl sm:bottom-6 sm:left-6 sm:right-10">
+                <SectionLabel
+                  accent={false}
+                  className="text-br text-lg sm:text-xl lg:text-[1rem]"
+                >
+                  <span className="text-lg leading-none sm:text-xl lg:text-[1.2rem]">
+                    <span className="block">ABOUT</span>
+                    <span className="mt-0 block">FIRM</span>
+                  </span>
+                </SectionLabel>
+              </div>
             </div>
           </div>
 

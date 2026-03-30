@@ -18,13 +18,18 @@ export default function InsightsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* ── Left label ── */}
           <div className="lg:col-span-2 fade-in">
-            <div className="bg-gray-100 rounded-3xl px-8 py-12 sm:px-10 lg:px-10 lg:py-16 flex items-center justify-center min-h-[220px]">
-              <SectionLabel accent={false} className="text-center lg:text-left">
-                <span id="insights-heading">
-                  Inspiration &amp;
-                  <br className="hidden lg:block" /> Insights
-                </span>
-              </SectionLabel>
+            <div className="relative min-h-[170px] rounded-3xl bg-gray-100 px-8 py-12 sm:px-10 lg:px-10 lg:py-16">
+              <div className="absolute bottom-4 left-4 right-8 sm:bottom-6 sm:left-6 sm:right-10">
+                <SectionLabel accent={false} className="text-left">
+                  <span
+                    id="insights-heading"
+                    className="text-lg sm:text-xl lg:text-[1.1rem]"
+                  >
+                    <span className="block">Inspiration &amp;</span>
+                    <span className="mt-1 block lg:mt-0.5">Insights</span>
+                  </span>
+                </SectionLabel>
+              </div>
             </div>
           </div>
 

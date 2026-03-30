@@ -4,22 +4,18 @@ import type { HotTopic } from "@/types";
 
 export default function HotTopicsSection() {
   return (
-    <section
-      className="bg-white py-6 sm:py-8"
-      aria-label="Hot Topics"
-    >
-      <div className="container-main flex items-stretch gap-0">
-        {/* Orange skewed label */}
-        <div className="shrink-0 flex items-center mr-6 sm:mr-10">
+    <section className="bg-white py-6 sm:py-8" aria-label="Hot Topics">
+      <div className="container-main flex items-start gap-0">
+        {/* Orange angled label */}
+        <div className="mr-6 flex shrink-0 items-start sm:mr-10">
           <div
-            className="flex items-center px-5 py-2 bg-brand-orange"
-            style={{ transform: "skewX(-10deg)" }}
+            className="flex h-[58px] min-w-[190px] items-center rounded-l-lg rounded-br-lg rounded-tr-lg bg-brand-orange pl-7 pr-12"
+            style={{
+              clipPath: "polygon(0 0, 88% 0, 100% 100%, 0 100%)",
+            }}
             aria-hidden="true"
           >
-            <span
-              className="block text-white font-extrabold tracking-[0.18em] uppercase whitespace-nowrap"
-              style={{ fontSize: "0.65rem", transform: "skewX(10deg)" }}
-            >
+            <span className="block whitespace-nowrap text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-white">
               Hot Topics
             </span>
           </div>
