@@ -123,10 +123,15 @@ export default function HeroSection() {
           {/* Orange CTA button with arrow */}
           <Link
             href="#about"
-            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[#FF8A00] px-7 py-3.5 text-[8px] font-extrabold uppercase tracking-[0.05em] text-[#0a1f3e] shadow-lg transition-all duration-200 hover:translate-y-[-2px] hover:bg-[#ff9a43] hover:shadow-xl"
+            className="group relative mt-10 inline-flex h-[48px] w-[220px] items-center justify-center rounded-lg bg-[#ff7200] text-[10px] font-extrabold uppercase tracking-[0.03em] text-[#0a1f3e] shadow-lg transition-all duration-200 hover:translate-y-[-2px] hover:bg-[#f0882d] hover:shadow-xl"
+            style={{
+              clipPath: "polygon(0 0, calc(100% - 34px) 0, 100% 100%, 0 100%)",
+            }}
           >
-            <RightArrowIcon />
-            LETS CONNECT
+            <span className="absolute inset-0 flex -translate-x-3 items-center justify-center gap-1 text-center">
+              <RightArrowIcon />
+              <span>LETS CONNECT</span>
+            </span>
           </Link>
         </div>
 
@@ -190,14 +195,14 @@ function ExpertsBadge() {
 function RightArrowIcon() {
   return (
     <svg
-      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+      className="h-4 w-20 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.2"
-      viewBox="0 0 24 24"
+      strokeWidth="3"
+      viewBox="0 0 80 24"
       aria-hidden="true"
     >
-      <path d="M5 12h14M12 5l7 7-7 7" />
+      <path d="M3 12h70M66 5l7 7-7 7" />
     </svg>
   );
 }
