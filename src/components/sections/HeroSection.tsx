@@ -94,34 +94,36 @@ export default function HeroSection() {
       <div className="container-main relative z-10 flex min-h-[680px] flex-col justify-between py-16 sm:py-20 lg:min-h-[760px] lg:py-24">
         <div className="max-w-[560px] pt-6 sm:pt-10 lg:pt-24">
           {/* Subtitle with modern pill styling */}
-          <p className="mb-5 inline-block rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#B8D0FF] backdrop-blur-sm sm:text-xs">
+          <p className="mb-5 block w-fit whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.08em] text-[#B8D0FF] backdrop-blur-sm sm:text-[9px]">
             {SITE_CONFIG.tagline}
           </p>
 
-          {/* Headline - split into two lines */}
-          <h1
-            className="font-display text-white uppercase leading-[0.96] tracking-tight"
-            style={{ fontSize: "clamp(3rem, 8vw, 5.8rem)" }}
-          >
-            {SITE_CONFIG.heroHeadline.split("\n").map((line, i) => (
-              <span key={i} className="block font-black">
-                {line}
-              </span>
-            ))}
-          </h1>
+          <div className="inline-block">
+            {/* Headline - split into two lines */}
+            <h1
+              className="font-display text-white uppercase leading-[0.96] tracking-[0.05em]"
+              style={{ fontSize: "clamp(1rem, 4vw, 3rem)" }}
+            >
+              {SITE_CONFIG.heroHeadline.split("\n").map((line, i) => (
+                <span key={i} className="block font-black">
+                  {line}
+                </span>
+              ))}
+            </h1>
 
-          {/* Orange divider line */}
-          <div className="mt-3 h-1 w-[70px] bg-[#FF8A00] sm:w-[100px]" />
+            {/* Orange divider line */}
+            <div className="mt-3 h-1 w-full  bg-[#E0ECFF]" />
+          </div>
 
           {/* Description text */}
-          <p className="mt-6 max-w-[500px] text-sm leading-7 text-[#E0ECFF] sm:text-[1.05rem]">
+          <p className="mt-6 max-w-[500px] text-sm leading-7 text-[#E0ECFF] sm:text-[16px]">
             {SITE_CONFIG.heroSubtext}
           </p>
 
           {/* Orange CTA button with arrow */}
           <Link
             href="#about"
-            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[#FF8A00] px-7 py-3.5 text-sm font-extrabold uppercase tracking-[0.05em] text-[#0a1f3e] shadow-lg transition-all duration-200 hover:translate-y-[-2px] hover:bg-[#ff9a43] hover:shadow-xl"
+            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[#FF8A00] px-7 py-3.5 text-[8px] font-extrabold uppercase tracking-[0.05em] text-[#0a1f3e] shadow-lg transition-all duration-200 hover:translate-y-[-2px] hover:bg-[#ff9a43] hover:shadow-xl"
           >
             <RightArrowIcon />
             LETS CONNECT
@@ -131,7 +133,7 @@ export default function HeroSection() {
         {/* Bottom row with advisory text and badge */}
         <div className="flex flex-col gap-6 pb-4 sm:pb-6 lg:flex-row lg:items-end lg:justify-between">
           {/* Advisory text with orange left border */}
-          <p className="border-l-2 border-[#FF8A00] pl-3 text-[11px] font-bold uppercase tracking-[0.04em] text-[#ADC6FF] sm:text-sm">
+          <p className=" pl-3 text-[11px] font-bold uppercase tracking-[0.04em] text-[#E0ECFF]">
             {SITE_CONFIG.heroBanner}
           </p>
 
