@@ -136,7 +136,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom row with advisory text and badge */}
-        <div className="flex flex-col gap-6 pb-4 sm:pb-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-6 pb-4 sm:pb-6 lg:pb-0">
           {/* Advisory text with orange left border */}
           <p className=" pl-3 text-[11px] font-bold uppercase tracking-[0.04em] text-[#E0ECFF]">
             {SITE_CONFIG.heroBanner}
@@ -158,7 +158,7 @@ function ExpertsBadge() {
   ];
 
   return (
-    <div className="flex items-center gap-3 self-start rounded-full bg-white/10 px-2 py-1.5 backdrop-blur-md lg:self-auto">
+    <div className="mt-8 flex items-center gap-3 self-end rounded-full bg-white/10 px-2 backdrop-blur-md lg:absolute lg:bottom-16 lg:right-12 lg:mt-0">
       <div className="flex -space-x-3" aria-hidden="true">
         {avatars.map((avatar, index) => (
           <div
